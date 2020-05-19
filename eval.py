@@ -19,4 +19,4 @@ class Evaluator:
             if word == '*':
                 equation += '*'
 
-        return equaion
+        return equation
