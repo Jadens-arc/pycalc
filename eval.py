@@ -14,11 +14,24 @@ class Evaluator:
         for word in userString:
             if self.isNum(word):
                 equation += word
-            if word in ['+', '-', '/', '*']:
+            
+            if word in ['+', '-', '/', '*', '**', '(', ')']:
                 equation += word
-            if word == 'x':
+            
+            if word in ['x', 'multiplied', 'times']:
                 equation += '*'
-
+            
+            if word == 'divided':
+                equation += '/'
+            
+            if word in ['subtracted', 'minus']:
+                equation += '-'
+            
+            if word == 'plus':
+                equation += '+'
+            
+            if word == 'power':
+                equation += '**'   
         return equation
 
     def solve(self, userEquation, interpret=True):
