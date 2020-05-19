@@ -12,11 +12,16 @@ class Evaluator:
         userString = userString.split()
         equation = ''
         for word in userString:
-            if isNum(word):
+            if self.isNum(word):
                 equation += word
             if word in ['+', '-', '/', '*']:
                 equation += word
-            if word == '*':
+            if word == 'x':
                 equation += '*'
 
         return equation
+
+    def solve(self, userEquation, interpret=True):
+        if interpret:
+            userEquation = self.interpret(userEquation)
+        return eval(userEquation)
