@@ -1,7 +1,9 @@
 class Evaluator:
     def __init__(self):
         pass
+
     def isNum(self, suspectedInteger):
+        '''Takes string; returns boolean; if string can be interpeted as integer''' 
         try:
             float(suspectedInteger)
             return True
@@ -9,6 +11,7 @@ class Evaluator:
             return False
 
     def interpret(self, userString):
+        '''Takes string; returns mathmatical equation'''
         userString = userString.split()
         equation = ''
         for word in userString:
@@ -35,6 +38,7 @@ class Evaluator:
         return equation
 
     def solve(self, userEquation, interpret=True):
+        '''Takes string; returns double; interprets user string and solves it returns value'''
         if interpret:
             userEquation = self.interpret(userEquation)
         return eval(userEquation)
